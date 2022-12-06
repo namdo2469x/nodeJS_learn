@@ -6,8 +6,6 @@ const path = require('path')
 
 app.use(express.static(path.join(__dirname,'public')))
 
-const port = 3000
-
 //HTTP logger
 app.use(morgan('combined'))
 
@@ -27,7 +25,11 @@ app.get('/news', (req, res) => {
   res.render('news') 
 })
 
+app.get('/search', (req, res) => {
+  res.render('search') 
+})
+
 // 127.0.0.1 - localhost  
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(3000, () => {
+  console.log(`Example app listening on port 3000`)
 })
